@@ -5,8 +5,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <title>fan on off</title>
+        <style>
+            .fanbox{
+                width: 200px;
+                height:200px;
+                margin:100px 150px;  
+                background-image: url('img/coolingfan.jpeg'); 
+                background-repeat: no-repeat; 
+                background-size: cover;            
+                animation-name: fan ;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite ;
+                animation-play-state: paused;
+            }
+            @keyframes fan {
+                0%{
+                    transform:rotateZ(0deg);                    
+                }
+                100%{
+                    transform:rotateZ(359deg);
+                }                
+            }.btngroup > button{
+                border:none;
+                padding: 10px 7px;
+            }
+            .btngroup > button:first-child{
+            
+              padding:20px;
+                width: 100px;
+                height:50px;
+                background-image: url("img/offon.jpeg");
+                background-repeat: no-repeat;
+                background-size:150px auto;
+                background-position: -20px -56px;           
+            }
+        </style>
+        <script>   
+        function x(elem){
+            return document.querySelector(elem)
+        }         
+            function startFan(speed){
+                if(speed == 0){
+                   // alert('1');
+                  x('[data-a="myfanbox"]').style.animationPlayState='paused';
+                  x('[onclick="startFan(0)"]').style.backgroundPosition='-10px -56px';
+
+                }
+                else if(speed == 1){
+                   x('.fanbox').style.animationPlayState='running';
+                   x('#fanboxx').style.animationDuration='1s';
+                   x('[onclick="startFan(0)"]').style.backgroundPosition='-20px -10px';
+
+                }else if(speed == 2){
+                   // alert('2');
+                  x('[data-a="myfanbox"]').style.animationPlayState='running';
+                  x('[data-a="myfanbox"]').style.animationDuration='0.5s';
+
+                  x('[onclick="startFan(0)"]').style.backgroundPosition='-20px -10px';
+
+                    
+                }else
+                   // alert('3');
+                    document.getElementById('fanboxx').style.animationPlayState='running';
+                    document.getElementById('fanboxx').style.animationPlayState='0.1s';
+               
+                    x('[onclick="startFan(0)"]').style.backgroundPosition='-20px -10px';
+                }
+
+        </script>
     </head>
     <body>
+           <div class="fanbox" id="fanboxx" data-a="myfanbox"></div>       
+           <div style="text-align:center" class="btngroup">
+            <button onclick="startFan(0)"></button>
+            <button onclick="startFan(1)">1</button>
+            <button onclick="startFan(2)">2</button>
+            <button onclick="startFan(3)">3</button>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         
