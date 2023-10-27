@@ -7,7 +7,41 @@
     </head>
     <body>
     <script>
-        let number="palindrom"
+         function checkForPallindrom(n)
+        {
+          //  alert(n.length);
+          // alert(n.charAt(0)); 
+          var isPallindrom=false;  
+           for(var j=(n.length-1);j>=0;j--)
+        {
+            console.log(n.charAt(j));         
+              for(var i=0;i<n.length;i++) 
+        
+         {
+               console.log(n.charAt(i));         
+               if(n.charAt(j) == n.charAt(i)){
+                isPallindrom= true;
+               }else{
+                isPallindrom= false;
+               }
+         
+            }
+        }
+         if (isPallindrom == true){
+            alert(n +" number is pallindrom");
+         }else{
+            alert(n +" number is not pallindrom");
+         }
+        
+    }
+         
+
+
+        let number= prompt('please check whether number is palindrom or not?');
+       // number=parseInt(number);
+       // alert(number+2);
+        checkForPallindrom(number);
+       
     </script>
 </body>
 </html>
