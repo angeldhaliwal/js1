@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>area of circle</title>
+    </head>
+    <body>
+        <form onsubmit= "return submitForm()">
+            <input id="r" type="text" name="radius" placeholder="enter the value of radius">
+            <input id="pi" type="text" name="pi" placeholder="enter the value of pi">
+            <input type="submit" value="submit">             
+        </form>
+        <script>
+            function submitForm(){
+                const pi1=document.getElementById('pi').value;                
+                var r1=document.getElementById('r').value;
+                alert(pi1+ 'ok');
+                alert(r1+ 'ok');
+                let area=parseFloat(pi1) * parseInt(r1) * parseInt(r1);
+                console.log("area of circle =" + area)
+                alert(area);
+                localStorage.setItem(area);
+                return false;
+            }
+        </script>
+    </body>
+</html>
